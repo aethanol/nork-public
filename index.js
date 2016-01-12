@@ -1,5 +1,5 @@
 'use strict';
-var world = require('./nork/lib/world.json');
+var world = require('./lib/world.json');
 
 var readline = require('readline');
 
@@ -8,17 +8,13 @@ var io = readline.createInterface({ //call the interface "io"
     output: process.stdout //output goes to the terminal ("standard out")
 });
 
-var inventory = []; //initial empty inventory
-var health = 100; //initial health 100%
-var playing = true;
-
 
 class Room{
     constructor(id, description){
         this.id = id;
         this.description = description;
         this.items = [];
-        
+        this.exits = [];
     }
 }
 
@@ -64,28 +60,31 @@ var Game = function(world){
 // build the world
 Game.prototype.build = function(world){
     var worldArr = world.rooms;
-    var currRoom = new Room(worldArr[0].id, worldArr[0].description);
-    
-    for(var i = 1; i < worldArr.length; i++){
+
+    for(var i = 0; i < worldArr.length; i++){
+        
         var newRoom = new Room(worldArr[i].id, worldArr[i].description);
         
-        currRoom = newRoom;
         
+        // for(var j = 0; j < worldArr[i].exits[j].length; j++){
+        //     newRoom.exits.push(worldArr[i].exits[j]);
+        // }
+               
     }
-    
-    
+  
 };
 
 // play the game
 Game.prototype.play = function(){
-    Console.log("Welcome to Nork! gl;hf")
-    Console.log("You find yourself in a barren snowy wasteland naked but a broken fitbit and a pair of flip flops");
-    Console.log("To the north there is a cabin, to the east is a foreboding forest");
+    var self = this;
+    console.log('Welcome to Nork! gl;hf');
+    console.log('You find yourself in a barren snowy wasteland naked but a broken fitbit and a pair of flip flops');
+    console.log('To the north there is a cabin, to the east is a foreboding forest');
 };
 
 // uses item
 Game.prototype.use = function(item){
-    
+    var self = this;
 };
 
 // takes item
