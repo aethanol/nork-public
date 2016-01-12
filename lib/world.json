@@ -1,18 +1,60 @@
 {
-  "rooms": [
-    {
-      "id": "room1",
-      "description": "The first room. The second room is north.",
-      "exits": {
-        "north": "room2"
-      }
-    },
-    {
-      "id": "room2",
-      "description": "The second room. The first room is south.",
-      "exits": {
-        "south": "room1"
-      } 
-    }
-  ]
+    "rooms": [
+        {
+            "id": "snow",
+            "description": "Snowy hellscape fit for only polar bears. To the north lies a desolate cabin.",
+            "exits": [
+                {
+                     "north": "cabin"
+                }
+            ] 
+        },
+        {
+            "id": "cabin",
+            "description": "Abandoned one-room cabin, a rug lies in the middle of the room.",
+            "exits": [
+                {
+                    "south": "snow"
+                },
+                {
+                   "down": "tunnel" 
+                }
+                
+            ]
+        },
+        {
+            "id": "tunnel",
+            "description": "Dark, wet tunnel. Ahead to the east you see a flickering light. ",
+            "exits": [
+                {
+                    "up": "cabin"
+                },
+                {
+                    "east": "cave" 
+                }
+            ],
+            "items": [
+                {
+                    
+                }
+            ]
+                          
+            
+        },
+        {
+            "id": "cave",
+            "description": "Home of the beast",
+            "exits": [
+                {
+                   "west": "tunnel" 
+                }
+            ],
+            "items": [
+                {
+                    
+                }
+            ]
+                
+        }
+    ]
 }
