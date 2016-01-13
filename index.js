@@ -1,12 +1,22 @@
+// Ethan Anderson
+// INFO 498
+// 01/12/16
+// nork
+
 'use strict';
+// our world data
 var world = require('./lib/world.json');
 
+// node.js input module
 var readline = require('readline');
 
+// empty array for inventory
 var inv = [];
-var health = 100;
-var playing = true;
+
+// set the current room to snow
 var currRoom = world.rooms[0];
+
+// default question that will be repeated
 var question = "\nWhat would you like to do? ";
 
 var io = readline.createInterface({ //call the interface "io"
@@ -38,6 +48,7 @@ var input = function (answer) {
     // parse text to lowercase and split text by spaces to string array
     var text = answer.toLowerCase().split(" ");
 
+    // check the value of the first location of the array and match the string to the function corresponding
     if (text[0] === "go") {
 
         go(text[1]);
@@ -53,26 +64,31 @@ var input = function (answer) {
 
     } else if (text[0] === "brief") {
         brief();
+        
     } else if (text[0] == "inventory"){
         inventory();
+        
+    // base case to handle non commands
     }else {
         console.log("I didn't understand that command");
         io.question(question, input);
     }
 }
 
+// checks if the exit is valid and updates the current room
 var go = function (direction) {
     if (currRoom.exits[direction] != undefined) {
         currRoom = world.rooms[currRoom.exits[direction]];
         game();
 
-
+// if the direction is not valid print error
     } else {
         console.log("you can't go that way");
         io.question(question, input);
     }
 }
 
+// loops through inv array if there are items in
 var inventory = function(){
     if(inv[0] == undefined){
         console.log("Your inventory is empty");
@@ -86,12 +102,14 @@ var inventory = function(){
 }
 
 
+// if you pick up the shard you win the game otherwise add the item to your inventory
 var take = function (item) {
     if(item === "shard"){
         console.log("You feel yourself yanked through a wormhole back into bed, was this all a dream?");
         console.log("\nCongratulations! You made it home safely and won the game.")
         process.exit();
     }
+    // push phaser to inventory
     if (currRoom.items[item]) {
         inv.push(item);
 
@@ -104,9 +122,10 @@ var take = function (item) {
     }
 }
 
-// check to see if inventory array is empty
+// check to see if inventory array is empty handle accordingly
 var use = function (item) {
-    // since there is only one item in the game, the empty inventory array will be undefined unless the phaser is in it
+    // since there is only one item in the game that is not game ending, 
+    //the empty inventory array at index 0 will be undefined unless the phaser is in it
     if (inv[0] != undefined) {
         // if you are in the cave shoot the rabbit, otherwise shoot yourself in the foot
         if (currRoom.id === "cave") {
@@ -128,7 +147,7 @@ var use = function (item) {
 }
 
 
-// drops the item
+// checks if you have the item, and handles accordingly
 var drop = function (item) {
     if (inv[item]) {
         inv.item = undefined;
