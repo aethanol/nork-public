@@ -2,7 +2,7 @@
     "rooms": [
         {
             "id": "snow",
-            "description": "You find yourself in a snowy hellscape naked but a broken fitbit and a pair of flip flops \nTo the north there is a cabin, to the east is a foreboding forest",
+            "description": "You find yourself in a snowy hellscape, is this a dream? \nTo the north there is a cabin, to the east is a foreboding forest",
             "exits": {
                 "east": 1,
                 "north": 2
@@ -16,12 +16,12 @@
                 "west": 0
             },
             "items": {
-                "shiny": "phaser"
+                "phaser": "phaser"
                 }
         },
         {
             "id": "cabin",
-            "description": "Abandoned one-room cabin, a rug lies in the middle of the room.",
+            "description": "Abandoned one-room cabin, down through an open trapdoor a ladder leads to darkness",
             "exits": {
                 "south": 0,
                 "down": 3
@@ -30,7 +30,7 @@
         },
         {
             "id": "tunnel",
-            "description": "Dark, wet tunnel. Ahead to the east you see the opening to a cave, this must be the way home. ",
+            "description": "Dark, wet tunnel. Ahead to the east you see light through the opening to a cave, this must be the way home. ",
             "exits": {
                 "up": 2,
                 "east": 4
@@ -43,7 +43,9 @@
             "exits": {
                 "west": 3
             },
-            "items": {}
+            "items": {
+                "shard": "Strange object that warps spacetime"
+            }
         }
     ]
 }
