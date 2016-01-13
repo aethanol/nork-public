@@ -4,33 +4,44 @@
             "id": "snow",
             "description": "You find yourself in a snowy hellscape naked but a broken fitbit and a pair of flip flops \nTo the north there is a cabin, to the east is a foreboding forest",
             "exits": {
-                "north": 1
+                "east": 1,
+                "north": 2
             },
             "items": {}
+        },
+        {
+            "id": "forest",
+            "description": "Dense forest, as your mind wanders to the Forbidden Forest of Harry Potter you hear a growl up ahead. Standing terrified, you spot a phaser in the undergowth.",
+            "exits": {
+                "west": 0
+            },
+            "items": {
+                "shiny": "phaser"
+                }
         },
         {
             "id": "cabin",
             "description": "Abandoned one-room cabin, a rug lies in the middle of the room.",
             "exits": {
                 "south": 0,
-                "down": 2
+                "down": 3
             },
             "items": {}
         },
         {
             "id": "tunnel",
-            "description": "Dark, wet tunnel. Ahead to the east you see a flickering light. ",
+            "description": "Dark, wet tunnel. Ahead to the east you see the opening to a cave, this must be the way home. ",
             "exits": {
-                "up": 1,
-                "east": 3
+                "up": 2,
+                "east": 4
             },
             "items": {}
         },
         {
             "id": "cave",
-            "description": "Home of the beast",
+            "description": "You step through the cave opening only to spot the most foul, cruel, and bad-tempered rodent you ever set eyes on! \nIt's the Rabbit of Caerbannog!!!! ",
             "exits": {
-                "west": 2
+                "west": 3
             },
             "items": {}
         }
