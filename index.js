@@ -62,6 +62,7 @@ var go = function(direction){
     }
 }
 
+
 var take = function(item){
     if(currRoom.items[item]){
         inventory.item = item;
@@ -94,6 +95,6 @@ var brief = function(){
     io.question(question , input);
 }
 
-console.log("Welcome to nork! gl; hf")
+console.log("Welcome to Nork! gl;hf");
 game();
 
