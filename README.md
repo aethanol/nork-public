@@ -18,7 +18,7 @@ The behaviors of the program are broken into different functions that I assigned
 
 
 ##### 4. Approximately how many hours did it take you to complete this assignment? #####
-> I think I spent approximately 4 hours on this assignment. Most of that time was bumbling around with object orientation in JavaScript though.
+> I think I spent approximately 6 hours on this assignment. Most of that time was bumbling around with object orientation in JavaScript though.
 
 
 ##### 5. Did you receive help from any other sources (classmates, etc)? If so, please list who (be specific!). #####
